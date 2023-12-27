@@ -11,6 +11,8 @@
       "dom.iterable"
     ],
     "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
     "jsx": "preserve"
   }
 }
