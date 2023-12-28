@@ -35,15 +35,38 @@ function initMap(): void {
   const path = points.map(point => {
     return {lat: point[1], lng: point[0]}
   })
-  console.log(path)
-  const flightPath = new google.maps.Polyline({
+
+
+  const track = new google.maps.Polyline({
     map,
     path,
     geodesic: true,
     strokeColor: "red",
-    strokeOpacity: 0.5,
-    strokeWeight: 2,
+    strokeOpacity: 1,
+    strokeWeight: 1,
+    zIndex: 100
   });
+
+
+  // show raw point for this track
+    // show all points on map
+    const rawpath = rawPoints.map(point => {
+      return {lat: point[1], lng: point[0]}
+    })
+  
+  
+    const rawtrack = new google.maps.Polyline({
+      map,
+      path: rawpath,
+      geodesic: true,
+      strokeColor: "white",
+      strokeOpacity: 1,
+      strokeWeight: 5,
+      zIndex: 50
+    });
+
+
+
 
 
 
